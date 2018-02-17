@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Incoming;
+use App\Outgoing;
+use App\Observers\IncomingObserver;
+use App\Observers\OutgoingObserver;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -27,6 +31,7 @@ class EventServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        //
+        Incoming::observe(IncomingObserver::class);
+        Outgoing::observe(OutgoingObserver::class);
     }
 }
