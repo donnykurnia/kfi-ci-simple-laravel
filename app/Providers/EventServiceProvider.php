@@ -32,6 +32,6 @@ class EventServiceProvider extends ServiceProvider
         parent::boot();
 
         Incoming::observe(IncomingObserver::class);
-        Outgoing::observe(OutgoingObserver::class);
+        // Outgoing::observe(OutgoingObserver::class);
     }
 }
